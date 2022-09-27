@@ -13,6 +13,7 @@ use App\Models\Terminal;
           return $res;
 		}
         public function createTerminal(string $terminal,string $chave,string $database){
+            
             $res =  Terminal::on("mysql2")->create([
                "terminal"=> $terminal,
                 "chave"=> $chave

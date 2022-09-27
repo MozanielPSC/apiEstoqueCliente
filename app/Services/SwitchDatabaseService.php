@@ -10,6 +10,10 @@ use App\Models\Terminal;
         public function switchDatabase(string $cnpj){
 			$database = '';
         switch($cnpj){
+            case '1728327600127': 
+                $database = 'classica';
+                return $database;
+                break;
             default:
                 $database = //'mysqlteste';
                 //'mysql2';

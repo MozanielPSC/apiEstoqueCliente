@@ -115,6 +115,20 @@ return [
             'schema' => 'public',
             'sslmode' => 'prefer',
         ], 
+        'classica'=>[
+            'driver' => 'pgsql',
+            'url' => env('DATABASE_URL'),
+            'host' => '187.1.186.156',
+            'port' => '5432',
+            'database' => 'testebh',
+            'username' => 'postgres',
+            'password' => '123456',
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'schema' => 'public',
+            'sslmode' => 'prefer',
+        ] ,
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',

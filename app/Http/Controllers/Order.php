@@ -104,12 +104,12 @@ class Order extends Controller
     {
         $req = $request->all(['cnpj']);
         $database = $this->SwitchDatabaseService->switchDatabase($req['cnpj']);
-        if (!$this->VerifyCNPJ->verifyCNPJ($req['cnpj'])) {
-            $json['message'] = 'Envie parâmetros validos';
-            $json['status'] = 400;
-            $json = json_encode($json);
-            return response($json, 200);
-        } else {
+        // if (!$this->VerifyCNPJ->verifyCNPJ($req['cnpj'])) {
+        //     $json['message'] = 'Envie parâmetros validos';
+        //     $json['status'] = 400;
+        //     $json = json_encode($json);
+        //     return response($json, 200);
+        // } else {
             try {
                 $parametros = $this->OrdersService->getParameters($database);
                 if (isset($parametros)) {
@@ -141,7 +141,7 @@ class Order extends Controller
                 return response($response, 200);
             }
 
-        }
+        //}
 
     }
     public function separacao(string $codpedido, Request $request)

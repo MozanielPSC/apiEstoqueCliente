@@ -104,7 +104,7 @@ class Order extends Controller
     {
         $req = $request->all(['cnpj']);
         $database = $this->SwitchDatabaseService->switchDatabase($req['cnpj']);
-        if (!$this->VerifyCNPJ->verifyCNPJ($req['cnpj']) && ($req['cnpj'] != 1728327600127)) {
+        if (!$this->VerifyCNPJ->verifyCNPJ($req['cnpj'])) {
             $json['message'] = 'Envie parâmetros validos';
             $json['status'] = 400;
             $json = json_encode($json);

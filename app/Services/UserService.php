@@ -36,6 +36,7 @@ use App\Services\ConvertToUTFService;
                   FROM  appusuario
                   INNER JOIN  terceiro on terceiro.codigo = appusuario.codterceiro
                   where coalesce(appusuario.ativo,false)=true and coalesce(terceiro.ativo,false)=true
+                  and   coalesce(appusuario.ativo,false) = true
                   "
             );
             $user = ConvertToUTFService::convertToUTF($user);

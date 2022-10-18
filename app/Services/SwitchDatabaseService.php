@@ -15,7 +15,7 @@ use App\Models\Terminal;
                 return $database;
                 break;
             case '17283276000550': 
-                $database = 'classica';
+                $database = 'testebh';
                 return $database;
                 break;
             default:

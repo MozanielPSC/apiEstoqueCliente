@@ -14,6 +14,10 @@ use App\Models\Terminal;
                 $database = 'classica';
                 return $database;
                 break;
+            case '17283276000550': 
+                $database = 'classica';
+                return $database;
+                break;
             default:
                 $database = //'mysqlteste';
                 //'mysql2';

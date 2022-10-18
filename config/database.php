@@ -129,6 +129,20 @@ return [
             'schema' => 'public',
             'sslmode' => 'prefer',
         ] ,
+        'testebh'=>[
+            'driver' => 'pgsql',
+            'url' => env('DATABASE_URL'),
+            'host' => env('TESTEBH_HOST'),
+            'port' => '5432',
+            'database' => env('TESTEBH_DATABASE'),
+            'username' => env('TESTEBH_USERNAME'),
+            'password' => env('TESTEBH_PASSWORD'),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'schema' => 'public',
+            'sslmode' => 'prefer',
+        ] ,
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',

@@ -103,7 +103,8 @@ class Order extends Controller
     public function consultaParametros(Request $request)
     {
         $req = $request->all(['cnpj']);
-        $database = $this->SwitchDatabaseService->switchDatabase($req['cnpj']);
+        $database = 'mysql2';
+        $cnpj = $req['cnpj'];
         if (!$this->VerifyCNPJ->verifyCNPJ($req['cnpj'])) {
             $json['message'] = 'Envie parâmetros validos';
             $json['status'] = 400;
@@ -111,7 +112,7 @@ class Order extends Controller
             return response($json, 200);
         } else {
             try {
-                $parametros = $this->OrdersService->getParameters($database, $req['cnpj']);
+                $parametros = $this->OrdersService->getParameters($database, $cnpj);
                 if (isset($parametros)) {
                     $resp["status"] = 200;
                     $resp["response"] = $parametros;

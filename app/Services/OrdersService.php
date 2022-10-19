@@ -11,9 +11,9 @@ class OrdersService
     {
 
     }
-    public function getParameters(string $database)
+    public function getParameters(string $database,string $cnpj)
     {
-        $parameters = DB::connection($database)->table('appparametros')->get();
+        $parameters = DB::connection($database)->table('appparametros')->where('cnpj','=',$cnpj)->get();
         foreach ($parameters as $params) {
             if ($params->tempolimite === null) {
                 $params->tempolimite = 30;

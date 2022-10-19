@@ -111,7 +111,7 @@ class Order extends Controller
             return response($json, 200);
         } else {
             try {
-                $parametros = $this->OrdersService->getParameters($database);
+                $parametros = $this->OrdersService->getParameters($database, $req['cnpj']);
                 if (isset($parametros)) {
                     $resp["status"] = 200;
                     $resp["response"] = $parametros;

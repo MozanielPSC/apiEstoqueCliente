@@ -24,7 +24,6 @@ class Processo extends Controller
     }
     public function retorno(Request $request)
     {
-
         try {
             $req = $request->all([
                 'json',

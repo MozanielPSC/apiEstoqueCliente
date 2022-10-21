@@ -49,9 +49,9 @@ class ProcessoService
             DB::connection($database)->
                 insert('
                 insert into appretornoprocessoitem
-                ( codappretornoprocesso , sequencia , codproduto , quantidade , separado , conferido , falta ,preco,desconto,descricao_item,identificacao_documento)
-                values (?,?,?,?,?,?,?,?,?,?,?)',
-                [$codigo, $item->sequencia, $item->codproduto, $item->quantidade, $item->separado, $item->conferido, $item->falta, $item->preco, $item->desconto, $item->descricao_item,$item->identificacao_documento]);
+                ( codappretornoprocesso , sequencia , codproduto , quantidade , separado , conferido , falta ,preco,desconto,descricao_item,identificacao_documento,documentocodigo)
+                values (?,?,?,?,?,?,?,?,?,?,?,?)',
+                [$codigo, $item->sequencia, $item->codproduto, $item->quantidade, $item->separado, $item->conferido, $item->falta, $item->preco, $item->desconto, $item->descricao_item,$item->identificacao_documento,$item->documentocodigo]);
         }
     }
 
